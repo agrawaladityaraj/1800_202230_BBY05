@@ -12,6 +12,9 @@ This browser based web application to ...
 
 * Hi My name is Jeevan.I am excited about this project because I will get an amazing app at the end of this semester.
 
+* Hi My name is Mangat.I am excited about this project because I will make something new and use everything I learn during the semester. 
+
+
 ## Technologies
 
 Technologies used for this project:

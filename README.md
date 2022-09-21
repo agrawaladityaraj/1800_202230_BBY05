@@ -6,6 +6,7 @@
 
 ## General Info
 This browser based web application to ...
+* Hi My name is Jeevan.I am excited about this project because I will get an amazing app at the end of   this semester.
 	
 ## Technologies
 Technologies used for this project:

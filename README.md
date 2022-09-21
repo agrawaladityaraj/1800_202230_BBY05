@@ -10,6 +10,8 @@ This browser based web application to ...
 
 - Hi this is Aditya. I am excited for this project because I get to work in a collaborative environment like in the tech industry.
 
+* Hi My name is Jeevan.I am excited about this project because I will get an amazing app at the end of this semester.
+
 ## Technologies
 
 Technologies used for this project:

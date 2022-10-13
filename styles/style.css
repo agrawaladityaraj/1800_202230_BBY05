@@ -1,1 +1,13 @@
+#logoContainer {
+  display: flex;
+  align-items: center;
+}
 
+#logoImage {
+  height: 40px;
+  margin: 5px;
+}
+
+#navbar {
+  background-color: #339e98;
+}

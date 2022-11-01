@@ -6,3 +6,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
+
+#theOneTheOnlyContent {
+  height: 100%;
+}

@@ -5,7 +5,7 @@ function createAssignment(){
 
     var user = firebase.auth().currentUser;
     
-    var createdAssignments = db.collection("assignments");
+    var createdAssignments = db.collection("users").doc(user.uid).collection("assignments");
 
     createdAssignments.add({
         //write to firestore. We are using the UID for the ID in users collection
@@ -23,3 +23,5 @@ function createAssignment(){
 
 
 }
+
+displayCards("assignments");

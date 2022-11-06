@@ -14,14 +14,12 @@ function createAssignment(){
         madebyuser: user.uid,
     })
     .then(function () {
-      console.log("New user added to firestore");
+      console.log("New assignment added to firestore");
       window.location.assign("/app/main/main.html"); //re-direct to main.html after signup
     })
     .catch(function (error) {
-      console.log("Error adding new user: " + error);
+      console.log("Error adding new assignment: " + error);
     });
 
 
 }
-
-displayCards("assignments");

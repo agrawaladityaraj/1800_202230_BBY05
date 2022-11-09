@@ -1,0 +1,9 @@
+#content {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+#not-found {
+  padding: 10vw 30vw 10vw 30vw;
+}

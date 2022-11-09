@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <title>My BCIT Project</title>
     <meta name="comp1800 template" content="My 1800 App" />
@@ -7,28 +8,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script
-      type="text/javascript"
-      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"
-    ></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link rel="stylesheet" href="../../styles/styles.css" />
-</head>
   </head>
 
   <body>
@@ -42,22 +27,9 @@
     </div>
     <nav class="level level-item">
       <div class="level-item has-text-centered">
-        <button class="button is-large is-rounded is-primary">
-          Assignments
-        </button>
-      </div>
-      <div class="level-item has-text-centered">
-        <button class="button is-large is-rounded is-primary">Groups</button>
-      </div>
-      <div class="level-item has-text-centered">
-        <button class="button is-large is-rounded is-primary">Profile</button>
-      </div>
-    </nav>
-    <nav class="level level-item">
-      <div class="level-item has-text-centered">
         <a class="button is-medium is-rounded is-primary is-outlined" href="/app/assignments/createassignment.html">
           <span class="icon">
-            <span class="mdi mdi-plus"></span> </span>
+            <span class="mdi mdi-plus"></span>
           </span>
           <span>Create Assignment</span>
         </a>
@@ -69,10 +41,64 @@
         <button class="button is-large is-rounded is-primary">Profile</button>
       </div>
     </nav>
+    <div class="level m-3 mb-5">
+      <input type="text" class="input is-primary is-rounded" placeholder="Search..." />
+    </div>
+    <table class="table" id="table">
+      <thead>
+        <tr>
+          <th>Status</th>
+          <th>Course</th>
+          <th>Assignment</th>
+          <th>Date</th>
+          <th>Types</th>
+        </tr>
+      </thead>
+      <tfoot>
+        <tr>
+          <th>Status</th>
+          <th>Course</th>
+          <th>Assignment</th>
+          <th>Date</th>
+          <th>Types</th>
+        </tr>
+      </tfoot>
+
+
+
+      <tbody id="assignments-go-here">
+
+      </tbody>
+
+      <tbody>
+        <template id="assign-template">
+          <tr>
+            <td>
+              <div class="field">
+                <input class="is-checkradio" id="exampleCheckboxDefault" type="checkbox" name="exampleCheckboxDefault"
+                  checked="checked" />
+              </div>
+            </td>
+            <td>
+              <button class="button is-success is-small">
+                <span id="course-name"></span>
+              </button>
+            </td>
+            <td><span id="assign-name"></span></td>
+            <td><span id="assign-date"></span></td>
+            <td>
+              <span class="tag is-success is-light is-medium" id="assign-type">Handin Template</span>
+            </td>
+          </tr>
+        </template>
+      </tbody>
+    </table>
     <footer id="footPlaceholder"></footer>
     <script src="../../scripts/auth/firebaseAPI.js"></script>
-    <script src="../../scripts/auth/main.js"></script>
+
     <script src="../../../skeleton/skeleton.js"></script>
-    
+    <script src="../../scripts/auth/main.js"></script>
+
   </body>
+
 </html>

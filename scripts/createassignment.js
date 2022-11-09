@@ -5,7 +5,7 @@ function createAssignment(){
 
     var user = firebase.auth().currentUser;
     
-    var createdAssignments = db.collection("assignments");
+    var createdAssignments = db.collection("users").doc(user.uid).collection("assignments");
 
     createdAssignments.add({
         //write to firestore. We are using the UID for the ID in users collection
@@ -14,11 +14,11 @@ function createAssignment(){
         madebyuser: user.uid,
     })
     .then(function () {
-      console.log("New user added to firestore");
+      console.log("New assignment added to firestore");
       window.location.assign("/app/main/main.html"); //re-direct to main.html after signup
     })
     .catch(function (error) {
-      console.log("Error adding new user: " + error);
+      console.log("Error adding new assignment: " + error);
     });
 
 

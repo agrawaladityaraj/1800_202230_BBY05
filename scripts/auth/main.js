@@ -1,22 +1,88 @@
-
+var firbaseId;
 
 function insertName() {
-    firebase.auth().onAuthStateChanged(user => {
-        // Check if a user is signed in:
-        if (user) {
-            // Do something for the currently logged-in user here: 
-            console.log(user.uid); //print the uid in the browser console
-            console.log(user.displayName);  //print the user name in the browser console
-            user_Name = user.displayName;
+  firebase.auth().onAuthStateChanged((user) => {
+    // Check if a user is signed in:
+    if (user) {
+      firbaseId = user.uid;
+      //gets the template created in the main.html
+      let assigntemplate = document.getElementById("assign-template");
 
-            //method #1:  insert with html only
-            //document.getElementById("name-goes-here").innerText = user_Name;    //using javascript
-            //method #2:  insert using jquery
-            $("#name-goes-here").text(user_Name); //using jquery
+      console.log(firbaseId);
 
-        } else {
-            // No user is signed in.
-        }
-    });
+      //all the assignments with the speific userid
+      db.collection("users")
+        .doc(firbaseId)
+        .collection("assignments")
+        .get()
+        .then((snap) => {
+          snap.forEach((doc) => {
+            var assignname = doc.data().name; //gets the value of name key
+            var date = doc.data().date; //gets the value of the date lkey
+            console.log(date);
+            console.log(firbaseId);
+
+            let newcard = assigntemplate.content.cloneNode(true); //what does this mean
+
+            //update the assigments rows.
+            newcard.querySelector("#assign-name").innerHTML = assignname;
+
+            newcard.querySelector("#assign-date").innerHTML = date;
+
+            document
+              .getElementById("assignments" + "-go-here")
+              .appendChild(newcard);
+          });
+        });
+
+      // Do something for the currently logged-in user here:
+      console.log(firbaseId); //print the uid in the browser console
+      console.log(user.displayName); //print the user name in the browser console
+      user_Name = user.displayName;
+
+      //method #1:  insert with html only
+      //document.getElementById("name-goes-here").innerText = user_Name;    //using javascript
+      //method #2:  insert using jquery
+      $("#name-goes-here").text(user_Name); //using jquery
+    } else {
+      // No user is signed in.
+    }
+  });
 }
+
 insertName(); //run the function
+
+console.log(firbaseId);
+
+// function to get assignments of each user
+// function displayAssignments(collection) {
+//   //gets the template created in the main.html
+//   let assigntemplate = document.getElementById("assign-template");
+
+//   console.log(firbaseId);
+
+//   //all the assignments with the speific userid
+//   db.collection(collection)
+//     .doc(firbaseId)
+//     .collection("assignments")
+//     .get()
+//     .then((snap) => {
+//       snap.forEach((doc) => {
+//         var assignname = doc.data().name; //gets the value of name key
+//         var date = doc.data().date; //gets the value of the date lkey
+//         console.log(date);
+//         console.log(firbaseId);
+
+//         let newcard = assigntemplate.content.cloneNode(true); //what does this mean
+
+//         //update the assigments rows.
+//         newcard.querySelector("#assign-name").innerHTML = assignname;
+
+//         newcard.querySelector("#assign-date").innerHTML = date;
+
+//         document.getElementById(collection + "-go-here").appendChild(newcard);
+//       });
+//     });
+// }
+
+// displayAssignments("users");

@@ -5,13 +5,16 @@ function createAssignment(){
 
     var user = firebase.auth().currentUser;
     
-    var createdAssignments = db.collection("users").doc(user.uid).collection("assignments");
+    var createdAssignments = db.collection("assignments");
 
     createdAssignments.add({
         //write to firestore. We are using the UID for the ID in users collection
         name: document.getElementById("NameOfAssignment").value, //"users" collection
+        coursename: document.getElementById("CourseName").value, //"users" collection
+        assignmenttype: document.getElementById("AssignmentType").value, //"users" collection
         date: document.getElementById("Assignmentdate").value, //with authenticated user's ID (user.uid)
-        madebyuser: user.uid,
+        status: document.getElementById("status").value,
+        made_by_user: user.uid,
     })
     .then(function () {
       console.log("New assignment added to firestore");

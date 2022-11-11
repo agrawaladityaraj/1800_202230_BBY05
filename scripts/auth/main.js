@@ -11,14 +11,16 @@ function insertName() {
       console.log(firbaseId);
 
       //all the assignments with the speific userid
-      db.collection("users")
-        .doc(firbaseId)
-        .collection("assignments")
+      db.collection("assignments")
+        .where("made_by_user", "==", firbaseId)
         .get()
-        .then((snap) => {
-          snap.forEach((doc) => {
+        .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
             var assignname = doc.data().name; //gets the value of name key
             var date = doc.data().date; //gets the value of the date lkey
+            var coursename = doc.data().coursename;
+            var coursetype = doc.data().assignmenttype;
+            var assignmentstatus = doc.data().status;
             console.log(date);
             console.log(firbaseId);
 
@@ -28,6 +30,12 @@ function insertName() {
             newcard.querySelector("#assign-name").innerHTML = assignname;
 
             newcard.querySelector("#assign-date").innerHTML = date;
+
+            newcard.querySelector("#course-name").innerHTML = coursename;
+
+            newcard.querySelector("#assign-type").innerHTML = coursetype;
+
+            newcard.querySelector("#assignment-status").innerHTML = assignmentstatus;
 
             document
               .getElementById("assignments" + "-go-here")

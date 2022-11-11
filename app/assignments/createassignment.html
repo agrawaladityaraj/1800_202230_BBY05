@@ -25,12 +25,45 @@
                     <input class="input" type="text" placeholder="" id="NameOfAssignment">
                 </div>
             </div>
+            <div class="field">
+                <label class="label ">Course Name</label>
+                <div class="control ">
+                    <input class="input" type="text" placeholder="" id="CourseName">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label ">Assignment Type</label>
+                <div class="control ">
+                    <input class="input" type="text" placeholder="" id="AssignmentType">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Status</label>
+                <div class="control has-icons-left">
+                  <div class="select">
+                    <select id="status">
+                      <option>Select dropdown</option>
+                      <option >Completed</option>
+                      <option>Not Completed</option>
+                    </select>
+                  </div>
+                  <span class="icon is-medium is-left">
+                    <i class="fas fa-calendar-check"></i>
+                  </span>
+
+                </div>
+              </div>
+
+            
 
             <div class="field">
                 <label class="label">Assigment due date</label>
-                <input type="date" id="Assignmentdate" name="trip-start" value="2018-07-22" min="1990-01-01"
+                <input type="datetime-local" id="Assignmentdate" name="trip-start" value="2018-07-22" min="1990-01-01"
                     max="3000-12-31">
             </div>
+
+            
             <div class="field is-grouped is-grouped-centered">
                 <p class="control">
                     <a class="button is-primary" onclick="createAssignment()">
@@ -41,6 +74,9 @@
                     <a class="button is-danger" href="/app/main/main.html">
                         Cancel
                     </a>
+                </p>
+                <p class="control">
+                    <input class="button is-warning" type="reset" value="Reset">
                 </p>
             </div>
         </div>

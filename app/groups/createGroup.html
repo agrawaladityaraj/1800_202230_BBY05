@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Groups</title>
+    <title>My BCIT Project</title>
     <meta name="comp1800 template" content="My 1800 App" />
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script
       type="text/javascript"
       src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
@@ -34,29 +35,32 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="../../styles/styles.css" />
-    <link rel="stylesheet" href="../../styles/groups.css" />
   </head>
 
   <body>
     <nav id="navPlaceholder"></nav>
-    <div id="content">
-      <figure id="not-found">
-        <img src="../../assets/vectors/Groups_Empty.svg" />
-        <nav class="level">
-          <a
-            href="/app/groups/createGroup.html"
-            class="button is-primary level-item has-text-centered"
-          >
-            <span class="icon is-small">
-              <i class="fa-solid fa-plus"></i>
-            </span>
-            <span><b>Add a Group</b></span>
-          </a>
-        </nav>
-      </figure>
+    <div class="content is-fluid m-3">
+      <h1 class="title is-4">Create a new Group</h1>
+      <div id="group_name_control" class="control">
+        <input
+          id="group_name_input"
+          class="input is-primary"
+          type="text"
+          placeholder="Enter Name..."
+        />
+      </div>
+      <button
+        style="margin-top: 15px"
+        class="button is-primary"
+        onclick="createGroup()"
+      >
+        Submit
+      </button>
     </div>
     <footer id="footPlaceholder"></footer>
+    <script src="../../scripts/auth/firebaseAPI.js"></script>
+    <script src="../../scripts/auth/main.js"></script>
     <script src="../../skeleton/skeleton.js"></script>
-    <script src="../../scripts/groups.js"></script>
+    <script src="../../scripts/createGroups.js"></script>
   </body>
 </html>

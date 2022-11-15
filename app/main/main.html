@@ -1,18 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <title>My BCIT Project</title>
     <meta name="comp1800 template" content="My 1800 App" />
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"
+    ></script>
     <link rel="stylesheet" href="../../styles/styles.css" />
   </head>
 
@@ -21,13 +34,19 @@
     <div class="level m-4">
       <section class="level-item has-text-centered hero is-primary">
         <div class="hero-body">
-          <p class="title">What do you want to achieve today, <span id="name-goes-here"></span>?</p>
+          <p class="title">
+            What do you want to achieve today,
+            <span id="name-goes-here"></span>?
+          </p>
         </div>
       </section>
     </div>
     <nav class="level level-item">
       <div class="level-item has-text-centered">
-        <a class="button is-medium is-rounded is-primary is-outlined" href="/app/assignments/createassignment.html">
+        <a
+          class="button is-medium is-rounded is-primary is-outlined"
+          href="/app/assignments/createassignment.html"
+        >
           <span class="icon">
             <span class="mdi mdi-plus"></span>
           </span>
@@ -35,14 +54,20 @@
         </a>
       </div>
       <div class="level-item has-text-centered">
-        <button class="button is-large is-rounded is-primary">Groups</button>
+        <a href="/app/groups/groups.html">
+          <button class="button is-large is-rounded is-primary">Groups</button>
+        </a>
       </div>
       <div class="level-item has-text-centered">
         <button class="button is-large is-rounded is-primary">Profile</button>
       </div>
     </nav>
     <div class="level m-3 mb-5">
-      <input type="text" class="input is-primary is-rounded" placeholder="Search..." />
+      <input
+        type="text"
+        class="input is-primary is-rounded"
+        placeholder="Search..."
+      />
     </div>
     <table class="table" id="table">
       <thead>
@@ -64,19 +89,21 @@
         </tr>
       </tfoot>
 
-
-
-      <tbody id="assignments-go-here">
-
-      </tbody>
+      <tbody id="assignments-go-here"></tbody>
 
       <tbody>
         <template id="assign-template">
           <tr>
             <td>
-              <button class="button is-light is-primary is-small">
-                <span id="assignment-status"></span>
-              </button>
+              <div class="field">
+                <input
+                  class="is-checkradio"
+                  id="exampleCheckboxDefault"
+                  type="checkbox"
+                  name="exampleCheckboxDefault"
+                  checked="checked"
+                />
+              </div>
             </td>
             <td>
               <button class="button is-success is-small">
@@ -86,7 +113,9 @@
             <td><span id="assign-name"></span></td>
             <td><span id="assign-date"></span></td>
             <td>
-              <span class="tag is-success is-light is-medium" id="assign-type"></span>
+              <span class="tag is-success is-light is-medium" id="assign-type"
+                >Handin Template</span
+              >
             </td>
           </tr>
         </template>
@@ -97,7 +126,5 @@
 
     <script src="../../../skeleton/skeleton.js"></script>
     <script src="../../scripts/auth/main.js"></script>
-
   </body>
-
 </html>

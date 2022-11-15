@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My BCIT Project</title>
+    <meta name="comp1800 template" content="My 1800 App" />
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../../styles/styles.css" />
+  </head>
+
+  <body>
+    <nav id="navPlaceholder"></nav>
+    <div class="content is-fluid m-3">
+      <h1 class="title is-4">Create a new Group</h1>
+      <div id="group_name_control" class="control">
+        <input
+          id="group_name_input"
+          class="input is-primary"
+          type="text"
+          placeholder="Enter Name..."
+        />
+      </div>
+      <button
+        style="margin-top: 15px"
+        class="button is-primary"
+        onclick="createGroup()"
+      >
+        Submit
+      </button>
+    </div>
+    <footer id="footPlaceholder"></footer>
+    <script src="../../scripts/auth/firebaseAPI.js"></script>
+    <script src="../../scripts/auth/main.js"></script>
+    <script src="../../skeleton/skeleton.js"></script>
+    <script src="../../scripts/createGroups.js"></script>
+  </body>
+</html>

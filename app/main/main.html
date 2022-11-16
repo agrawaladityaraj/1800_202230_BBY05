@@ -95,15 +95,9 @@
         <template id="assign-template">
           <tr>
             <td>
-              <div class="field">
-                <input
-                  class="is-checkradio"
-                  id="exampleCheckboxDefault"
-                  type="checkbox"
-                  name="exampleCheckboxDefault"
-                  checked="checked"
-                />
-              </div>
+              <button class="button is-light is-primary is-small">
+                <span id="assignment-status"></span>
+              </button>
             </td>
             <td>
               <button class="button is-success is-small">
@@ -113,9 +107,10 @@
             <td><span id="assign-name"></span></td>
             <td><span id="assign-date"></span></td>
             <td>
-              <span class="tag is-success is-light is-medium" id="assign-type"
-                >Handin Template</span
-              >
+              <span
+                class="tag is-success is-light is-medium"
+                id="assign-type"
+              ></span>
             </td>
           </tr>
         </template>

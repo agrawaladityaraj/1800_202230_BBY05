@@ -7,3 +7,12 @@
 #not-found {
   padding: 10vw 30vw 10vw 30vw;
 }
+
+#spinner > img {
+  height: 15vw;
+}
+
+#spinner {
+  margin-top: 28vh;
+  text-align: center;
+}

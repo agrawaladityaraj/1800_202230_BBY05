@@ -40,25 +40,49 @@
   <body>
     <nav id="navPlaceholder"></nav>
     <div id="content">
-      <!-- <figure id="not-found">
-        <img src="../../assets/vectors/Groups_Empty.svg" />
-        <nav class="level">
-          <a
-            href="/app/groups/createGroup.html"
-            class="button is-primary level-item has-text-centered"
-          >
-            <span class="icon is-small">
-              <i class="fa-solid fa-plus"></i>
-            </span>
-            <span><b>Add a Group</b></span>
-          </a>
-        </nav>
-      </figure> -->
+      <template id="noGroupsFoundTemplate">
+        <figure id="not-found">
+          <img src="../../assets/vectors/Groups_Empty.svg" />
+          <nav class="level">
+            <a
+              href="/app/groups/createGroup.html"
+              class="button is-primary level-item has-text-centered"
+            >
+              <span class="icon is-small">
+                <i class="fa-solid fa-plus"></i>
+              </span>
+              <span><b>Add a Group</b></span>
+            </a>
+          </nav>
+        </figure>
+      </template>
+      <template id="groupsTableTemplate">
+        <table class="table is-fullwidth" id="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+            </tr>
+          </thead>
+          <tbody id="groupTableBody"></tbody>
+          <tfoot>
+            <tr>
+              <th>Name</th>
+            </tr>
+          </tfoot>
+        </table>
+      </template>
+      <template id="groupItemTemplate">
+        <tr>
+          <td id="groupName"></td>
+        </tr>
+      </template>
+      <div id="groupsTableGoesHere"></div>
       <div id="spinner">
         <img src="../../assets/gifs/Spinner.gif" alt="spinner" />
       </div>
     </div>
     <footer id="footPlaceholder"></footer>
+    <script src="../../scripts/auth/firebaseAPI.js"></script>
     <script src="../../skeleton/skeleton.js"></script>
     <script src="../../scripts/groups.js"></script>
   </body>

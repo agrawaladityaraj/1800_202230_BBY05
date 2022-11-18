@@ -15,12 +15,14 @@ function insertName() {
         .where("made_by_user", "==", firbaseId)
         .get()
         .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
+          querySnapshot.forEach((doc) => {
+            var assignmentID = doc.id;
             var assignname = doc.data().name; //gets the value of name key
             var date = doc.data().date; //gets the value of the date lkey
             var coursename = doc.data().coursename;
             var coursetype = doc.data().assignmenttype;
             var assignmentstatus = doc.data().status;
+            console.log(assignmentID);
             console.log(date);
             console.log(firbaseId);
 
@@ -35,7 +37,11 @@ function insertName() {
 
             newcard.querySelector("#assign-type").innerHTML = coursetype;
 
-            newcard.querySelector("#assignment-status").innerHTML = assignmentstatus;
+            newcard.querySelector("#assignment-status").innerHTML =
+              assignmentstatus;
+
+            newcard.querySelector("a").href =
+              "/app/assignments/editAssigment.html?AssignID=" + assignmentID;
 
             document
               .getElementById("assignments" + "-go-here")
@@ -94,3 +100,8 @@ console.log(firbaseId);
 // }
 
 // displayAssignments("users");
+
+function setAssignmentData(id) {
+  localStorage.setItem("hikeID", id);
+  console.log(id);
+}

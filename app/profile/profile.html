@@ -63,7 +63,7 @@
           </div>
         </div>
         <div class="field">
-          <label class="label">School</label>
+          <label class="label">Country</label>
           <div class="control">
             <input
               class="input"
@@ -91,14 +91,13 @@
           </div>
         </div>
       </fieldset>
-      <div>
-        <button type="button" class="button is-info" onclick="editUserInfo()">
-          Edit
-        </button>
-        <span style="width: 10px"></span>
-        <button type="button" class="button is-info" onclick="saveUserInfo()">
-          Save
-        </button>
+      <div class="field is-grouped is-grouped-centered pt-4">
+        <p class="control">
+          <a class="button is-info" onclick="editUserInfo()">Edit</a>
+        </p>
+        <p class="control">
+          <a class="button is-success" onclick="saveUserInfo()">Save</a>
+        </p>
       </div>
     </div>
     <footer id="footPlaceholder"></footer>

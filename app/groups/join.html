@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My BCIT Project</title>
+    <meta name="comp1800 template" content="My 1800 App" />
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"
+    ></script>
+    <link rel="stylesheet" href="../../styles/styles.css" />
+  </head>
+
+  <body>
+    <nav id="navPlaceholder"></nav>
+    <div id="content">
+      <template id="groupNotValidTemplate">
+        <figure id="not-found">
+          <img src="../../assets/vectors/Group_Not_Valid.svg" alt="Not Valid" />
+          <h4 class="title is-4 has-text-centered"></h4>
+          <nav class="level">
+            <a
+              href="/app/groups/groups.html"
+              class="button is-primary level-item has-text-centered"
+            >
+              <span class="icon is-small">
+                <i class="fa-sharp fa-solid fa-arrow-left"></i>
+              </span>
+              <span><b>See Your Groups</b></span>
+            </a>
+          </nav>
+        </figure>
+      </template>
+      <template id="groupJoinedSuccessfully">
+        <figure id="not-found">
+          <img src="../../assets/vectors/Successful.svg" alt="Not Valid" />
+          <h4 class="title is-4 has-text-centered">
+            You joined this group. Lets start collaborating!
+          </h4>
+          <nav class="level">
+            <a
+              href="/app/groups/groups.html"
+              class="button is-primary level-item has-text-centered"
+            >
+              <span class="icon is-small">
+                <i class="fa-sharp fa-solid fa-arrow-left"></i>
+              </span>
+              <span><b>See Your Groups</b></span>
+            </a>
+          </nav>
+        </figure>
+      </template>
+      <template id="areYouSureTemplate">
+        <figure id="not-found">
+          <img
+            src="../../assets/vectors/Are_You_Sure.svg"
+            alt="Are You Sure?"
+          />
+          <h5 class="title is-5 has-text-centered">
+            Are you sure you want to join this group?
+          </h5>
+          <div class="card mb-5">
+            <header class="card-header">
+              <p class="card-header-title">Group Info</p>
+            </header>
+            <div class="card-content">
+              <div class="content">
+                <p><b>Name: </b><span id="groupName"></span></p>
+              </div>
+            </div>
+          </div>
+          <nav class="level">
+            <button class="button is-primary level-item" onclick="joinGroup()">
+              <span class="icon is-small">
+                <i class="fa-solid fa-right-to-bracket"></i>
+              </span>
+              <span><b>Join This Group</b></span>
+            </button>
+          </nav>
+        </figure>
+      </template>
+      <div id="spinner">
+        <img src="../../assets/gifs/Spinner.gif" alt="spinner" />
+      </div>
+    </div>
+    <footer id="footPlaceholder"></footer>
+    <script src="../../scripts/auth/firebaseAPI.js"></script>
+    <script src="../../skeleton/skeleton.js"></script>
+    <script src="../../scripts/joinGroup.js"></script>
+  </body>
+</html>

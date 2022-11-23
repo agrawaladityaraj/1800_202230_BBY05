@@ -119,12 +119,12 @@ function filterAssignments(value) {
           querySnapshot.forEach((doc) => {
             var assignmentID = doc.id;
             var assignname = doc.data().name; //gets the value of name key
-            var date = doc.data().date; //gets the value of the date lkey
+            var date = doc.data().date; //gets the value of the date key
             var coursename = doc.data().coursename;
             var coursetype = doc.data().assignmenttype;
             var assignmentstatus = doc.data().status;
 
-            let newcard = assigntemplate.content.cloneNode(true); //what does this mean
+            let newcard = assigntemplate.content.cloneNode(true); 
 
             //update the assigments rows.
             newcard.querySelector("#assign-name").innerHTML = assignname;
@@ -145,12 +145,8 @@ function filterAssignments(value) {
 
       user_Name = user.displayName;
 
-      //method #1:  insert with html only
-      //document.getElementById("name-goes-here").innerText = user_Name;    //using javascript
-      //method #2:  insert using jquery
+      
       $("#name-goes-here").text(user_Name); //using jquery
-    } else {
-      // No user is signed in.
-    }
+    } 
   });
 }

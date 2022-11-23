@@ -1,17 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <title>My BCIT Project</title>
     <meta name="comp1800 template" content="My 1800 App" />
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"
+    ></script>
     <link rel="stylesheet" href="../../styles/styles.css" />
   </head>
 
@@ -29,7 +43,10 @@
     </div>
     <nav class="level level-item">
       <div class="level-item has-text-centered">
-        <a class="button is-medium is-rounded is-primary is-outlined" href="/app/assignments/createassignment.html">
+        <a
+          class="button is-medium is-rounded is-primary is-outlined"
+          href="/app/assignments/createassignment.html"
+        >
           <span class="icon">
             <span class="mdi mdi-plus"></span>
           </span>
@@ -46,8 +63,30 @@
       </div>
     </nav>
     <div class="level m-3 mb-5">
-      <input type="text" class="input is-primary is-rounded" placeholder="Search..." />
+      <input
+        type="text"
+        class="input is-primary is-rounded"
+        placeholder="Search..."
+      />
+      <div class="control has-icons-left">
+        <div class="select is-primary is-rounded">
+          <select
+            id="status"
+            onchange=" filterAssignments(document.getElementById('status').value)"
+          >
+            <option value="date">Due Dates</option>
+            <option value="name">Assignment Name</option>
+            <option value="coursename">Course Type</option>
+            <option value="status">Completion Status</option>
+            <option value="assignmenttype">Assignment Type</option>
+          </select>
+        </div>
+        <span class="icon is-medium is-left">
+          <i class="fa-solid fa-arrow-down-wide-short"></i>
+        </span>
+      </div>
     </div>
+
     <table class="table" id="table">
       <thead>
         <tr>
@@ -88,13 +127,15 @@
             <td><span id="assign-name"></span></td>
             <td><span id="assign-date"></span></td>
             <td>
-              <span class="tag is-success is-light is-medium" id="assign-type"></span>
+              <span
+                class="tag is-success is-light is-medium"
+                id="assign-type"
+              ></span>
             </td>
             <td>
               <a href="/app/assignments/editAssigment.html">
                 <span class="icon has-text-success">
                   <i class="fa-solid fa-pen-to-square"></i>
-
                 </span>
               </a>
             </td>
@@ -108,5 +149,4 @@
     <script src="../../../skeleton/skeleton.js"></script>
     <script src="../../scripts/auth/main.js"></script>
   </body>
-
 </html>

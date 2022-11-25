@@ -12,3 +12,12 @@ body {
 body>footer {
   margin-top: auto;
 }
+
+.hover {
+  cursor: pointer;
+}
+
+/* #resetButton {
+  display:none !important;
+  
+} */

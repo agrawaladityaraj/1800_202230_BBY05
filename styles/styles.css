@@ -2,22 +2,36 @@
 @import url("https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css");
 
-
 body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-body>footer {
+body > footer {
   margin-top: auto;
 }
 
-.hover {
-  cursor: pointer;
+#content {
+  height: 100%;
+  width: 100%;
+  position: relative;
 }
 
-/* #resetButton {
-  display:none !important;
-  
-} */
+#not-found {
+  padding: 10vw;
+}
+
+#not-found > img {
+  padding-left: 20vw;
+  padding-right: 20vw;
+}
+
+#spinner > img {
+  height: 15vw;
+}
+
+#spinner {
+  margin-top: 28vh;
+  text-align: center;
+}

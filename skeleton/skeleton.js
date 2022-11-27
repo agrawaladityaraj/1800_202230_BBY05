@@ -4,6 +4,13 @@
 //---------------------------------------------------
 
 (() => {
-  $("#navPlaceholder").load("/skeleton/nav.html");
+   firebase.auth().onAuthStateChanged((user) => {
+    // Check if a user is signed in:
+    if (user) {
+      $("#navPlaceholder").load("/skeleton/nav1.html");
+    } else {
+      $("#navPlaceholder").load("/skeleton/nav.html");
+    }
+   });
   $("#footPlaceholder").load("/skeleton/foot.html");
 })();

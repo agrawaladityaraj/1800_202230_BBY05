@@ -21,6 +21,7 @@ function insertName() {
 
       //all the assignments with the speific userid
       db.collection("assignments")
+        .orderBy("date")
         .where("made_by_user", "==", firbaseId)
         .get()
         .then((querySnapshot) => {

@@ -26,3 +26,16 @@ function createAssignment(){
 
 
 }
+
+function logOut() {
+  firebase
+    .auth()
+    .signOut()
+    .then(() => {
+      console.log("signed out");
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+

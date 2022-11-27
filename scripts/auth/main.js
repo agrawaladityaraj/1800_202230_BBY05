@@ -1,15 +1,15 @@
 var firbaseId;
 
- var x = document.getElementById("resetButton");
- function hidebuttons() {
-   console.log("it worked");
-   if (x.style.display == "none") {
-     x.style.display = "block";
-   } else {
-     console.log("button is none");
-     x.style.display = "block";
-   }
- }
+var x = document.getElementById("resetButton");
+function hidebuttons() {
+  console.log("it worked");
+  if (x.style.display == "none") {
+    x.style.display = "block";
+  } else {
+    console.log("button is none");
+    x.style.display = "block";
+  }
+}
 
 function insertName() {
   firebase.auth().onAuthStateChanged((user) => {
@@ -18,9 +18,6 @@ function insertName() {
       firbaseId = user.uid;
       //gets the template created in the main.html
       let assigntemplate = document.getElementById("assign-template");
-
-   
-    
 
       //all the assignments with the speific userid
       db.collection("assignments")
@@ -34,7 +31,6 @@ function insertName() {
             var coursename = doc.data().coursename;
             var coursetype = doc.data().assignmenttype;
             var assignmentstatus = doc.data().status;
-          
 
             let newcard = assigntemplate.content.cloneNode(true); //what does this mean
 
@@ -60,7 +56,7 @@ function insertName() {
         });
 
       // Do something for the currently logged-in user here:
-    //print the user name in the browser console
+      //print the user name in the browser console
       user_Name = user.displayName;
 
       //method #1:  insert with html only
@@ -74,8 +70,6 @@ function insertName() {
 }
 
 insertName(); //run the function
-
-
 
 // function to get assignments of each user
 // function displayAssignments(collection) {
@@ -112,12 +106,10 @@ insertName(); //run the function
 
 function searchAssignments() {
   document.getElementById("assignments" + "-go-here").innerHTML = "";
-  
+
   hidebuttons();
 
-
   let stringUser = document.getElementById("searchBar").value;
-
 
   firebase.auth().onAuthStateChanged((user) => {
     // Check if a user is signed in:
@@ -125,8 +117,6 @@ function searchAssignments() {
       let firbaseId2 = user.uid;
       //gets the template created in the main.html
       let assigntemplate = document.getElementById("assign-template");
-
-   
 
       //all the assignments with the speific userid
       db.collection("assignments")
@@ -140,7 +130,6 @@ function searchAssignments() {
             var coursename = doc.data().coursename;
             var coursetype = doc.data().assignmenttype;
             var assignmentstatus = doc.data().status;
-          
 
             let newcard = assigntemplate.content.cloneNode(true); //what does this mean
             var inassignname = assignname
@@ -148,7 +137,7 @@ function searchAssignments() {
               .includes(stringUser.toLowerCase());
 
             var incoursename = coursename
-              .toLowerCase()
+              .toLow2erCase()
               .includes(stringUser.toLowerCase());
 
             var incoursetype = coursetype
@@ -158,8 +147,6 @@ function searchAssignments() {
             var inassignmentstatus = assignmentstatus
               .toLowerCase()
               .includes(stringUser.toLowerCase());
-
-              
 
             if (
               inassignname ||
@@ -190,7 +177,7 @@ function searchAssignments() {
         });
 
       // Do something for the currently logged-in user here:
-//print the user name in the browser console
+      //print the user name in the browser console
       user_Name = user.displayName;
 
       //method #1:  insert with html only
@@ -204,7 +191,6 @@ function searchAssignments() {
 }
 function setAssignmentData(id) {
   localStorage.setItem("hikeID", id);
-
 }
 
 $("#searchBar").keypress(function (event) {
@@ -213,9 +199,18 @@ $("#searchBar").keypress(function (event) {
   }
 });
 
-
 function test() {
   console.log("Hello it worked");
 }
 
-
+function logOut() {
+  firebase
+    .auth()
+    .signOut()
+    .then(() => {
+      console.log("signed out");
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}

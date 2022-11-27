@@ -215,3 +215,55 @@ function logOut() {
       console.log(error);
     });
 }
+
+function filterAssignments(value) {
+  firebase.auth().onAuthStateChanged((user) => {
+    // Check if a user is signed in:
+    if (user) {
+      firbaseId = user.uid;
+      //gets the template created in the main.html
+      let assigntemplate = document.getElementById("assign-template");
+
+      var div = document.getElementById("assignments-go-here");
+      div.innerHTML = "";
+      console.log(value);
+
+      //all the assignments with the speific userid
+      db.collection("assignments")
+        .orderBy(value)
+        .where("made_by_user", "==", firbaseId)
+        .get()
+        .then((querySnapshot) => {
+          querySnapshot.forEach((doc) => {
+            var assignmentID = doc.id;
+            var assignname = doc.data().name; //gets the value of name key
+            var date = doc.data().date; //gets the value of the date key
+            var coursename = doc.data().coursename;
+            var coursetype = doc.data().assignmenttype;
+            var assignmentstatus = doc.data().status;
+
+            let newcard = assigntemplate.content.cloneNode(true);
+
+            //update the assigments rows.
+            newcard.querySelector("#assign-name").innerHTML = assignname;
+            newcard.querySelector("#assign-date").innerHTML = date;
+            newcard.querySelector("#course-name").innerHTML = coursename;
+            newcard.querySelector("#assign-type").innerHTML = coursetype;
+            newcard.querySelector("#assignment-status").innerHTML =
+              assignmentstatus;
+
+            newcard.querySelector("a").href =
+              "/app/assignments/editAssigment.html?AssignID=" + assignmentID;
+
+            document
+              .getElementById("assignments" + "-go-here")
+              .appendChild(newcard);
+          });
+        });
+
+      user_Name = user.displayName;
+
+      $("#name-goes-here").text(user_Name); //using jquery
+    }
+  });
+}

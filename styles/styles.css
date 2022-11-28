@@ -36,7 +36,6 @@ body > footer {
   text-align: center;
 }
 
-
 .share-btn {
   position: relative;
   border: none;
@@ -55,19 +54,18 @@ body > footer {
 .share-options {
   position: absolute;
   bottom: 20%;
-  left: 40%;
+  left: 30%;
   width: auto;
   height: auto;
-  transform-origin:bottom;
+  transform-origin: bottom;
   transform: scale(0);
   border-radius: 10px;
   background: rgba(15, 15, 15, 0.5);
   color: #fff;
   padding: 20px;
-  font-family: 'roboto';
-  transition: .5s;
-  transition-delay: .5s;
-  ;
+  font-family: "roboto";
+  transition: 0.5s;
+  transition-delay: 0.5s;
 }
 
 .share-options.active {
@@ -78,7 +76,7 @@ body > footer {
 
 .title {
   opacity: 0;
-  transition: .5s;
+  transition: 0.5s;
   transition-delay: 0s;
   font-size: 20px;
   text-transform: capitalize;
@@ -89,7 +87,7 @@ body > footer {
 
 .social-media {
   opacity: 0;
-  transition: .5s;
+  transition: 0.5s;
   transition-delay: 0s;
   width: 250px;
   height: 120px;
@@ -114,32 +112,32 @@ body > footer {
 }
 
 .social-media-btn:nth-child(1) {
-  background: #FFA654;
+  background: #ffa654;
 }
 
 .social-media-btn:nth-child(2) {
-  background: #25D366;
+  background: #25d366;
 }
 
 .social-media-btn:nth-child(3) {
-  background: #E4405F;
+  background: #e4405f;
 }
 
 .social-media-btn:nth-child(4) {
-  background: #1DA1F2;
+  background: #1da1f2;
 }
 
 .social-media-btn:nth-child(5) {
-  background: #1877F2;
+  background: #1877f2;
 }
 
 .social-media-btn:nth-child(6) {
-  background: #0A66C2;
+  background: #0a66c2;
 }
 
 .link-container {
   opacity: 0;
-  transition: .5s;
+  transition: 0.5s;
   transition-delay: 0s;
   width: 100%;
   position: relative;
@@ -176,6 +174,6 @@ body > footer {
 .share-options.active .social-media,
 .share-options.active .link-container {
   opacity: 1;
-  transition: .5s;
-  transition-delay: .5s;
+  transition: 0.5s;
+  transition-delay: 0.5s;
 }

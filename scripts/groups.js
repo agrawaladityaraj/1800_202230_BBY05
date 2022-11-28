@@ -51,12 +51,16 @@ function getGroups() {
                 group.data().name;
               groupItem.querySelector("#groupStatus").innerText = "User";
               groupItem.querySelector("#groupStatus").classList.add("is-info");
+              groupItem.querySelector("#share").id = group.id;
               groupsTable
                 .querySelector("#groupTableBody")
                 .appendChild(groupItem);
             });
             content.appendChild(groupsTable);
           }
+        })
+        .then(() => {
+          addshare();
         });
     });
 }
@@ -71,4 +75,16 @@ function logOut() {
     .catch((error) => {
       console.log(error);
     });
+}
+
+function addshare() {
+  const shareBtn = document.querySelectorAll(".share-btn");
+  const shareOptions = document.querySelector(".share-options");
+
+  shareBtn.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      shareOptions.classList.toggle("active");
+      // shareOptions.querySelector(".link").innerText = 
+    });
+  });
 }

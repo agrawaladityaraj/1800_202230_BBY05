@@ -38,7 +38,9 @@ function insertName() {
             //update the assigments rows.
             newcard.querySelector("#assign-name").innerHTML = assignname;
 
-            newcard.querySelector("#assign-date").innerHTML = date;
+            newcard.querySelector("#assign-date").innerHTML = new Date(
+              date
+            ).toDateString();
 
             newcard.querySelector("#course-name").innerHTML = coursename;
 

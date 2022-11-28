@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My BCIT Project</title>
+    <meta name="comp1800 template" content="My 1800 App" />
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"
+    ></script>
+    <link rel="stylesheet" href="../../styles/styles.css" />
+  </head>
+
+  <body>
+    <nav id="navPlaceholder"></nav>
+    <div id="content">
+      <template id="groupNotValidTemplate">
+        <figure id="not-found">
+          <img src="../../assets/vectors/Group_Not_Valid.svg" alt="Not Valid" />
+          <h4 id="notValidHeading" class="title is-4 has-text-centered"></h4>
+          <nav class="level">
+            <a
+              href="/app/groups/groups.html"
+              class="button is-primary level-item has-text-centered"
+            >
+              <span class="icon is-small">
+                <i class="fa-sharp fa-solid fa-arrow-left"></i>
+              </span>
+              <span><b>See Your Groups</b></span>
+            </a>
+          </nav>
+        </figure>
+      </template>
+      <template id="noAssignmentsFoundTemplate">
+        <figure id="not-found">
+          <img src="../../assets/vectors/Groups_Empty.svg" />
+          <h4 id="notValidHeading" class="title is-4 has-text-centered">
+            No Assignments Found.
+          </h4>
+          <nav class="level">
+            <a class="button is-primary level-item has-text-centered">
+              <span class="icon is-small">
+                <i class="fa-solid fa-plus"></i>
+              </span>
+              <span><b>Add an Assignment</b></span>
+            </a>
+          </nav>
+        </figure>
+      </template>
+      <template id="assignmentsTableTemplate">
+        <div class="level m-4">
+          <section class="level-item has-text-centered hero is-primary">
+            <div class="hero-body">
+              <p class="title">
+                What do you want to achieve today,
+                <span id="name-goes-here"></span>?
+              </p>
+            </div>
+          </section>
+        </div>
+        <div class="control level m-3 mb-5 has-icons-right is-hoverable">
+          <input
+            type="text"
+            class="input is-primary is-rounded"
+            id="searchBar"
+            placeholder="Search..."
+          />
+          <a href="./main.html">
+            <button
+              class="button is-link is-solid is-outlined is-rounded"
+              id="resetButton"
+              style="display: none"
+              onclick="hidebuttons()"
+            >
+              <span>Reset</span>
+            </button>
+          </a>
+          <div class="control has-icons-left">
+            <div class="select is-primary is-rounded">
+              <select
+                id="status"
+                onchange=" filterAssignments(document.getElementById('status').value)"
+              >
+                <option value="date">Due Dates</option>
+                <option value="name">Assignment Name</option>
+                <option value="coursename">Course Type</option>
+                <option value="status">Completion Status</option>
+                <option value="assignmenttype">Assignment Type</option>
+              </select>
+            </div>
+            <span class="icon is-medium is-left">
+              <i class="fa-solid fa-arrow-down-wide-short"></i>
+            </span>
+          </div>
+        </div>
+        <table class="table is-fullwidth" id="table">
+          <thead>
+            <tr>
+              <th>Status</th>
+              <th>Course</th>
+              <th>Assignment</th>
+              <th>Date</th>
+              <th>Types</th>
+              <th>Edit</th>
+            </tr>
+          </thead>
+          <tbody id="assignments-go-here"></tbody>
+          <tfoot>
+            <tr>
+              <th>Status</th>
+              <th>Course</th>
+              <th>Assignment</th>
+              <th>Date</th>
+              <th>Types</th>
+              <th>Edit</th>
+            </tr>
+          </tfoot>
+        </table>
+      </template>
+      <template id="assign-template">
+        <tr>
+          <td>
+            <button class="button is-light is-primary is-small">
+              <span id="assignment-status"></span>
+            </button>
+          </td>
+          <td>
+            <button class="button is-success is-small">
+              <span id="course-name"></span>
+            </button>
+          </td>
+          <td><span id="assign-name"></span></td>
+          <td><span id="assign-date"></span></td>
+          <td>
+            <span
+              class="tag is-success is-light is-medium"
+              id="assign-type"
+            ></span>
+          </td>
+          <td>
+            <a href="/app/assignments/editAssigment.html">
+              <span class="icon has-text-success">
+                <i class="fa-solid fa-pen-to-square"></i>
+              </span>
+            </a>
+          </td>
+        </tr>
+      </template>
+      <div id="spinner">
+        <img src="../../assets/gifs/Spinner.gif" alt="spinner" />
+      </div>
+    </div>
+    <footer id="footPlaceholder"></footer>
+    <script src="../../scripts/auth/firebaseAPI.js"></script>
+    <script src="../../skeleton/skeleton.js"></script>
+    <script src="../../scripts/group.js"></script>
+  </body>
+</html>

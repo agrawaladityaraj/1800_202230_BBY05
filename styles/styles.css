@@ -171,3 +171,15 @@ body > footer {
   opacity: 1 !important;
   text-align: center;
 }
+
+#hoverableTableRow {
+  cursor: pointer;
+}
+
+#fab {
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  z-index: 3;
+  position: absolute;
+  bottom: calc(15vh + 30px);
+  right: 10vw;
+}

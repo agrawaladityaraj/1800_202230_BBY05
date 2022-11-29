@@ -35,6 +35,16 @@ function getGroups() {
               document.getElementById("groupItemTemplate");
             groupsOwner.forEach((group) => {
               let groupItem = groupItemTemplate.content.cloneNode(true);
+              groupItem
+                .querySelector("#groupName")
+                .addEventListener("click", () => {
+                  window.location.href = `/app/groups/group.html?id=${group.id}`;
+                });
+              groupItem
+                .querySelector("#groupRole")
+                .addEventListener("click", () => {
+                  window.location.href = `/app/groups/group.html?id=${group.id}`;
+                });
               groupItem.querySelector("#groupName").innerText =
                 group.data().name;
               groupItem.querySelector("#groupStatus").innerText = "Owner";
@@ -48,6 +58,16 @@ function getGroups() {
             });
             groupsUser.forEach((group) => {
               let groupItem = groupItemTemplate.content.cloneNode(true);
+              groupItem
+                .querySelector("#groupName")
+                .addEventListener("click", () => {
+                  window.location.href = `/app/groups/group.html?id=${group.id}`;
+                });
+              groupItem
+                .querySelector("#groupRole")
+                .addEventListener("click", () => {
+                  window.location.href = `/app/groups/group.html?id=${group.id}`;
+                });
               groupItem.querySelector("#groupName").innerText =
                 group.data().name;
               groupItem.querySelector("#groupStatus").innerText = "User";

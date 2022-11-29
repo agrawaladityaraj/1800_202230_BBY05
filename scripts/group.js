@@ -83,8 +83,15 @@ function getAssignments(name) {
             .getElementById("assignments-go-here")
             .appendChild(newCard);
         });
+        let fab = document
+          .getElementById("fabTemplate")
+          .content.cloneNode(true);
+        fab.querySelector(
+          "#fab"
+        ).href = `/app/assignments/createassignment.html?groupId=${groupId}`;
         document.getElementById("spinner").remove();
         content.appendChild(assignmentTable);
+        document.getElementById("fab-goes-here").appendChild(fab);
       }
     })
     .catch((err) => {
@@ -101,7 +108,7 @@ function noAssignmentsFound() {
     .content.cloneNode(true);
   noAssignmentsFound.querySelector(
     "a"
-  ).href = `/app/groups/createGroup.html?groupId=${groupId}`;
+  ).href = `/app/assignments/createassignment.html?groupId=${groupId}`;
   content.appendChild(noAssignmentsFound);
 }
 

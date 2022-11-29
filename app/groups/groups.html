@@ -55,7 +55,7 @@
         </figure>
       </template>
       <template id="groupsTableTemplate">
-        <table class="table is-fullwidth" id="table">
+        <table class="table is-fullwidth is-hoverable" id="table">
           <thead>
             <tr>
               <th>Name</th>
@@ -74,21 +74,13 @@
         </table>
       </template>
       <template id="groupItemTemplate">
-        <tr>
+        <tr id="hoverableTableRow">
           <td id="groupName"></td>
-          <td>
+          <td id="groupRole">
             <span class="tag is-light is-medium" id="groupStatus"></span>
           </td>
           <td>
             <div class="container">
-              <!-- <div class="share-options">
-                 <p class="title">share</p>
-
-                 <div class="link-container">
-                   <p class="link">https://example.com/share</p>
-                   <button class="copy-btn">copy</button>
-                 </div>
-                </div> -->
               <button id="share" class="share-btn">
                 <i class="fas fa-share-alt"></i>
               </button>

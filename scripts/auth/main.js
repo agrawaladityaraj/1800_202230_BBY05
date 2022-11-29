@@ -140,7 +140,7 @@ function searchAssignments() {
               .includes(stringUser.toLowerCase());
 
             var incoursename = coursename
-              .toLow2erCase()
+              .toLowerCase()
               .includes(stringUser.toLowerCase());
 
             var incoursetype = coursetype

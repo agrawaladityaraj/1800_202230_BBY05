@@ -206,18 +206,6 @@ function test() {
   console.log("Hello it worked");
 }
 
-function logOut() {
-  firebase
-    .auth()
-    .signOut()
-    .then(() => {
-      console.log("signed out");
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-}
-
 function filterAssignments(value) {
   firebase.auth().onAuthStateChanged((user) => {
     // Check if a user is signed in:

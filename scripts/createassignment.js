@@ -1,30 +1,30 @@
+function createAssignment() {
+  var user = firebase.auth().currentUser;
+  const urlParams = new URLSearchParams(window.location.search);
+  groupId = urlParams.get("groupId");
 
+  var createdAssignments = db.collection("assignments");
 
-
-function createAssignment(){
-
-    var user = firebase.auth().currentUser;
-    
-    var createdAssignments = db.collection("assignments");
-
-    createdAssignments.add({
-        //write to firestore. We are using the UID for the ID in users collection
-        name: document.getElementById("NameOfAssignment").value, //"users" collection
-        coursename: document.getElementById("CourseName").value, //"users" collection
-        assignmenttype: document.getElementById("AssignmentType").value, //"users" collection
-        date: document.getElementById("Assignmentdate").value, //with authenticated user's ID (user.uid)
-        status: document.getElementById("status").value,
-        made_by_user: user.uid,
+  createdAssignments
+    .add({
+      //write to firestore. We are using the UID for the ID in users collection
+      name: document.getElementById("NameOfAssignment").value, //"users" collection
+      coursename: document.getElementById("CourseName").value, //"users" collection
+      assignmenttype: document.getElementById("AssignmentType").value, //"users" collection
+      date: document.getElementById("Assignmentdate").value, //with authenticated user's ID (user.uid)
+      status: document.getElementById("status").value,
+      group: groupId ?? "",
+      made_by_user: user.uid,
     })
     .then(function () {
       console.log("New assignment added to firestore");
-      window.location.assign("/app/main/main.html"); //re-direct to main.html after signup
+      window.location.assign(
+        groupId ? `/app/groups/group.html?id=${groupId}` : "/app/main/main.html"
+      ); //re-direct to main.html after signup
     })
     .catch(function (error) {
       console.log("Error adding new assignment: " + error);
     });
-
-
 }
 
 function logOut() {
@@ -38,4 +38,3 @@ function logOut() {
       console.log(error);
     });
 }
-

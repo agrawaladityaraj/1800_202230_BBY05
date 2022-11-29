@@ -104,7 +104,8 @@ function addshare() {
 
   shareBtn.forEach((btn) => {
     btn.addEventListener("click", () => {
-      var link = "localhost:5500/app/groups/join.html?id=" + btn.id;
+      var link =
+        "https://bby05-b8a65.web.app/app/groups/join.html?id=" + btn.id;
       navigator.clipboard.writeText(link);
       shareOptions.classList.toggle("active");
       setTimeout(() => {

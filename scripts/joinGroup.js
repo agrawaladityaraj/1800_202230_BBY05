@@ -16,13 +16,12 @@ function getGroup() {
       .doc(groupId)
       .get()
       .then((group) => {
-        console.log(group);
         if (group.exists) {
           const data = group.data();
           if (data.owner == user.uid) {
             notValid("You own this group.");
           }
-          if (data?.users.find((item) => item === user.uid)) {
+          if (data.users && data.users.find((item) => item === user.uid)) {
             notValid("You are already in this group.");
           } else {
             areYouSure(data);

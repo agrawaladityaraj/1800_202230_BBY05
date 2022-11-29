@@ -35,9 +35,20 @@ function getGroups() {
               document.getElementById("groupItemTemplate");
             groupsOwner.forEach((group) => {
               let groupItem = groupItemTemplate.content.cloneNode(true);
+              groupItem
+                .querySelector("#groupName")
+                .addEventListener("click", () => {
+                  window.location.href = `/app/groups/group.html?id=${group.id}`;
+                });
+              groupItem
+                .querySelector("#groupRole")
+                .addEventListener("click", () => {
+                  window.location.href = `/app/groups/group.html?id=${group.id}`;
+                });
               groupItem.querySelector("#groupName").innerText =
                 group.data().name;
               groupItem.querySelector("#groupStatus").innerText = "Owner";
+              groupItem.querySelector("#share").id = group.id;
               groupItem
                 .querySelector("#groupStatus")
                 .classList.add("is-success");
@@ -47,6 +58,16 @@ function getGroups() {
             });
             groupsUser.forEach((group) => {
               let groupItem = groupItemTemplate.content.cloneNode(true);
+              groupItem
+                .querySelector("#groupName")
+                .addEventListener("click", () => {
+                  window.location.href = `/app/groups/group.html?id=${group.id}`;
+                });
+              groupItem
+                .querySelector("#groupRole")
+                .addEventListener("click", () => {
+                  window.location.href = `/app/groups/group.html?id=${group.id}`;
+                });
               groupItem.querySelector("#groupName").innerText =
                 group.data().name;
               groupItem.querySelector("#groupStatus").innerText = "User";
@@ -83,8 +104,12 @@ function addshare() {
 
   shareBtn.forEach((btn) => {
     btn.addEventListener("click", () => {
+      var link = "localhost:5500/app/groups/join.html?id=" + btn.id;
+      navigator.clipboard.writeText(link);
       shareOptions.classList.toggle("active");
-      // shareOptions.querySelector(".link").innerText = 
+      setTimeout(() => {
+        shareOptions.classList.toggle("active");
+      }, 3000);
     });
   });
 }

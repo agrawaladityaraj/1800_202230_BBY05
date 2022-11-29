@@ -31,11 +31,8 @@
 
   <body>
     <div class="share-options">
-      <p class="title">share</p>
-
       <div class="link-container">
-        <p class="link">https://example.com/share</p>
-        <button class="copy-btn">copy</button>
+        <p class="link">Link copied to your clipboard! abcdef ghij</p>
       </div>
     </div>
     <nav id="navPlaceholder"></nav>
@@ -58,7 +55,7 @@
         </figure>
       </template>
       <template id="groupsTableTemplate">
-        <table class="table is-fullwidth" id="table">
+        <table class="table is-fullwidth is-hoverable" id="table">
           <thead>
             <tr>
               <th>Name</th>
@@ -69,7 +66,7 @@
           <tbody id="groupTableBody"></tbody>
           <tfoot>
             <tr>
-              <th>Name </th>
+              <th>Name</th>
               <th>Role</th>
               <th>Share</th>
             </tr>
@@ -77,36 +74,27 @@
         </table>
       </template>
       <template id="groupItemTemplate">
-        <tr>
-          <td id="groupName"> </td>
-          <td>
+        <tr id="hoverableTableRow">
+          <td id="groupName"></td>
+          <td id="groupRole">
             <span class="tag is-light is-medium" id="groupStatus"></span>
           </td>
           <td>
             <div class="container">
-               <!-- <div class="share-options">
-                 <p class="title">share</p>
-
-                 <div class="link-container">
-                   <p class="link">https://example.com/share</p>
-                   <button class="copy-btn">copy</button>
-                 </div>
-                </div> -->
               <button id="share" class="share-btn">
                 <i class="fas fa-share-alt"></i>
               </button>
-             
             </div>
           </td>
         </tr>
       </template>
       <div id="groupsTableGoesHere"></div>
-      
+
       <div id="spinner">
         <img src="../../assets/gifs/Spinner.gif" alt="spinner" />
       </div>
     </div>
-    
+
     <footer id="footPlaceholder"></footer>
     <script src="../../scripts/auth/firebaseAPI.js"></script>
     <script src="../../skeleton/skeleton.js"></script>

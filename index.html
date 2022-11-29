@@ -7,12 +7,79 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"
+    ></script>
     <link rel="stylesheet" href="./styles/styles.css" />
   </head>
 
   <body>
     <nav id="navPlaceholder"></nav>
+    <section class="main-content section m-0 p-0">
+      <div class="container vertically-center">
+        <div id="main-content-children" class="columns">
+          <div class="column is-6 is-offset-1">
+            <div class="hero is-medium">
+              <div class="hero-body pb-6 pt-6">
+                <div class="column is-12">
+                  <h1 class="is-size-1 title mb-6 has-text-weight-bold">
+                    Organise all your assignments in less than 5 minutes.
+                  </h1>
+                  <p class="subtitle is-size-4">
+                    <strong>Time Table on Steroids</strong> takes a
+                    collaborative approach to tracking deadlines so that even if
+                    one person adds a deadline, everyone has access to it.
+                  </p>
+                  <div class="buttons">
+                    <a
+                      class="button is-medium is-primary"
+                      href="/app/login/login.html"
+                      >Start Your Journey</a
+                    >
+                    <a
+                      target="_blank"
+                      class="button is-medium is-outlined"
+                      href="/tinystore-development"
+                      >Home Page</a
+                    >
+                  </div>
+                  <p class="is-size-6">
+                    Get started
+                    <span class="has-text-weight-bold">today.</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column is-6 is-hidden-mobile">
+            <img
+              id="welcome-image"
+              src="./assets/vectors/Welcome.svg"
+              alt="Welcome"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
     <footer id="footPlaceholder"></footer>
+    <script src="./scripts/auth/firebaseAPI.js"></script>
     <script src="./skeleton/skeleton.js"></script>
   </body>
 </html>

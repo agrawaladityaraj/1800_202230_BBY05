@@ -38,7 +38,9 @@ function insertName() {
             //update the assigments rows.
             newcard.querySelector("#assign-name").innerHTML = assignname;
 
-            newcard.querySelector("#assign-date").innerHTML = date;
+            newcard.querySelector("#assign-date").innerHTML = new Date(
+              date
+            ).toDateString();
 
             newcard.querySelector("#course-name").innerHTML = coursename;
 
@@ -202,18 +204,6 @@ $("#searchBar").keypress(function (event) {
 
 function test() {
   console.log("Hello it worked");
-}
-
-function logOut() {
-  firebase
-    .auth()
-    .signOut()
-    .then(() => {
-      console.log("signed out");
-    })
-    .catch((error) => {
-      console.log(error);
-    });
 }
 
 function filterAssignments(value) {

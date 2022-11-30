@@ -185,12 +185,12 @@ body > footer {
 }
 
 #fab {
-  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
   z-index: 3;
-  position: absolute;
+  position: fixed;
   /* bottom: calc(15vh + 30px); */
-  bottom: 10vh;
-  right: 10vw;
+  bottom: 10%;
+  right: 10%;
 }
 
 #main-content {

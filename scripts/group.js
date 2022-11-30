@@ -182,7 +182,7 @@ function searchAssignments() {
 
       //all the assignments with the speific userid
       db.collection("assignments")
-        .where("made_by_user", "==", firbaseId2)
+        .where("group", "==", groupId)
         .get()
         .then((querySnapshot) => {
           querySnapshot.forEach((doc) => {
@@ -255,6 +255,7 @@ function searchAssignments() {
 function hidebuttons() {
   if (x.style.display == "none") {
     x.style.display = "block";
+    document.getElementById("reset-link").href = `./group.html?id=${groupId}`;
   } else {
     console.log("button is none");
     x.style.display = "block";

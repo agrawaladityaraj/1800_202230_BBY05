@@ -83,7 +83,7 @@
             id="searchBar"
             placeholder="Search..."
           />
-          <a href="./main.html">
+          <a id="reset-link">
             <button
               class="button is-link is-solid is-outlined is-rounded"
               id="resetButton"
@@ -111,29 +111,31 @@
             </span>
           </div>
         </div>
-        <table class="table is-fullwidth" id="table">
-          <thead>
-            <tr>
-              <th>Status</th>
-              <th>Course</th>
-              <th>Assignment</th>
-              <th>Date</th>
-              <th>Types</th>
-              <th>Edit</th>
-            </tr>
-          </thead>
-          <tbody id="assignments-go-here"></tbody>
-          <tfoot>
-            <tr>
-              <th>Status</th>
-              <th>Course</th>
-              <th>Assignment</th>
-              <th>Date</th>
-              <th>Types</th>
-              <th>Edit</th>
-            </tr>
-          </tfoot>
-        </table>
+        <div class="table-container">
+          <table class="table is-fullwidth" id="table">
+            <thead>
+              <tr>
+                <th>Status</th>
+                <th>Course</th>
+                <th>Assignment</th>
+                <th>Date</th>
+                <th>Types</th>
+                <th>Edit</th>
+              </tr>
+            </thead>
+            <tbody id="assignments-go-here"></tbody>
+            <tfoot>
+              <tr>
+                <th>Status</th>
+                <th>Course</th>
+                <th>Assignment</th>
+                <th>Date</th>
+                <th>Types</th>
+                <th>Edit</th>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
       </template>
       <template id="assign-template">
         <tr>

@@ -1,17 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <title>My BCIT Project</title>
     <meta name="comp1800 template" content="My 1800 App" />
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"
+    ></script>
     <link rel="stylesheet" href="../../styles/styles.css" />
   </head>
 
@@ -29,7 +43,10 @@
     </div>
     <nav class="level level-item">
       <div class="level-item has-text-centered">
-        <a class="button is-medium is-rounded is-primary is-outlined" href="/app/assignments/createassignment.html">
+        <a
+          class="button is-medium is-rounded is-primary is-outlined"
+          href="/app/assignments/createassignment.html"
+        >
           <span class="icon">
             <span class="mdi mdi-plus"></span>
           </span>
@@ -46,17 +63,28 @@
       </div>
     </nav>
     <div class="control level m-3 mb-5 has-icons-right is-hoverable">
-      <input type="text" class="input is-primary is-rounded" id="searchBar" placeholder="Search..." />
+      <input
+        type="text"
+        class="input is-primary is-rounded"
+        id="searchBar"
+        placeholder="Search..."
+      />
       <a href="./main.html">
-        <button class="button is-link is-solid is-outlined is-rounded" id="resetButton" style="display: none"
-          onclick="hidebuttons()">
+        <button
+          class="button is-link is-solid is-outlined is-rounded"
+          id="resetButton"
+          style="display: none"
+          onclick="hidebuttons()"
+        >
           <span>Reset</span>
-
         </button>
       </a>
       <div class="control has-icons-left">
         <div class="select is-primary is-rounded">
-          <select id="status" onchange=" filterAssignments(document.getElementById('status').value)">
+          <select
+            id="status"
+            onchange=" filterAssignments(document.getElementById('status').value)"
+          >
             <option value="date">Due Dates</option>
             <option value="name">Assignment Name</option>
             <option value="coursename">Course Type</option>
@@ -70,67 +98,68 @@
       </div>
     </div>
 
-
-
-
-    <table class="table" id="table">
-      <thead>
-        <tr>
-          <th>Status</th>
-          <th>Course</th>
-          <th>Assignment</th>
-          <th>Date</th>
-          <th>Types</th>
-          <th>Edit</th>
-        </tr>
-      </thead>
-      <tfoot>
-        <tr>
-          <th>Status</th>
-          <th>Course</th>
-          <th>Assignment</th>
-          <th>Date</th>
-          <th>Types</th>
-          <th>Edit</th>
-        </tr>
-      </tfoot>
-
-      <tbody id="assignments-go-here"></tbody>
-
-      <tbody>
-        <template id="assign-template">
+    <div class="table-container">
+      <table class="table is-fullwidth" id="table">
+        <thead>
           <tr>
-            <td>
-              <button class="button is-light is-primary is-small">
-                <span id="assignment-status"></span>
-              </button>
-            </td>
-            <td>
-              <button class="button is-success is-small">
-                <span id="course-name"></span>
-              </button>
-            </td>
-            <td><span id="assign-name"></span></td>
-            <td><span id="assign-date"></span></td>
-            <td>
-              <span class="tag is-success is-light is-medium" id="assign-type"></span>
-            </td>
-            <td>
-              <a href="/app/assignments/editAssigment.html">
-                <span class="icon has-text-success">
-                  <i class="fa-solid fa-pen-to-square"></i>
-                </span>
-              </a>
-            </td>
+            <th>Status</th>
+            <th>Course</th>
+            <th>Assignment</th>
+            <th>Date</th>
+            <th>Types</th>
+            <th>Edit</th>
           </tr>
-        </template>
-      </tbody>
-    </table>
+        </thead>
+        <tfoot>
+          <tr>
+            <th>Status</th>
+            <th>Course</th>
+            <th>Assignment</th>
+            <th>Date</th>
+            <th>Types</th>
+            <th>Edit</th>
+          </tr>
+        </tfoot>
+
+        <tbody id="assignments-go-here"></tbody>
+
+        <tbody>
+          <template id="assign-template">
+            <tr>
+              <td>
+                <button class="button is-light is-primary is-small">
+                  <span id="assignment-status"></span>
+                </button>
+              </td>
+              <td>
+                <button class="button is-success is-small">
+                  <span id="course-name"></span>
+                </button>
+              </td>
+              <td><span id="assign-name"></span></td>
+              <td><span id="assign-date"></span></td>
+              <td>
+                <span
+                  class="tag is-success is-light is-medium"
+                  id="assign-type"
+                ></span>
+              </td>
+              <td>
+                <a href="/app/assignments/editAssigment.html">
+                  <span class="icon has-text-success">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                  </span>
+                </a>
+              </td>
+            </tr>
+          </template>
+        </tbody>
+      </table>
+    </div>
     <footer id="footPlaceholder"></footer>
     <script src="../../scripts/auth/firebaseAPI.js"></script>
 
     <script src="../../../skeleton/skeleton.js"></script>
     <script src="../../scripts/auth/main.js"></script>
   </body>
-
 </html>

@@ -3,6 +3,13 @@
 // (navbar, footer, and other things) into html doc.
 //---------------------------------------------------
 
+function mobileClickMenu() {
+  let menu = document.getElementById("navbarBasicExample");
+  document.getElementById("mobileMenuButton").addEventListener("click", () => {
+    menu.classList.toggle("is-active");
+  });
+}
+
 (() => {
   firebase.auth().onAuthStateChanged((user) => {
     // Check if a user is signed in:
@@ -11,8 +18,10 @@
     } else {
       $("#navPlaceholder").load("/skeleton/nav.html");
     }
+    $("#footPlaceholder").load("/skeleton/foot.html", () => {
+      mobileClickMenu();
+    });
   });
-  $("#footPlaceholder").load("/skeleton/foot.html");
 })();
 
 function logOut() {

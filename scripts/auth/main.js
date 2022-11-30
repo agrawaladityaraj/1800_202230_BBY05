@@ -13,7 +13,7 @@ function hidebuttons() {
 
 function insertName() {
   firebase.auth().onAuthStateChanged((user) => {
-    // Check if a user is signed in:
+    // Check if a user is signed in
     if (user) {
       firbaseId = user.uid;
       //gets the template created in the main.html

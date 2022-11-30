@@ -7,6 +7,8 @@ firebase.auth().onAuthStateChanged((firebaseUser) => {
     const urlParams = new URLSearchParams(window.location.search);
     groupId = urlParams.get("id");
     getGroup();
+  } else {
+    window.location.href = "/app/login/login.html";
   }
 });
 

@@ -1,4 +1,4 @@
-## My Web Application (Add your Title here)
+## Timetable on Steroids
 
 - [General info](#general-info)
 - [Technologies](#technologies)
